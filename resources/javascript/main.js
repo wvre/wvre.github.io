@@ -13,11 +13,11 @@ form.addEventListener('submit', (e) => {
 
     if (zips.indexOf(zipv) > -1) {
         results.innerText = zipv;
-        results.style.backgroundColor = 'green';
+        results.style.backgroundColor = '#36dba7';
 
     } else {
         results.innerText = zipv;
-        results.style.backgroundColor = 'red';
+        results.style.backgroundColor = '#ef6664';
     }
 
     form.reset();
