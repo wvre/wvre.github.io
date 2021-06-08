@@ -26,6 +26,7 @@ form {
   line-height: 30px;
   height: 80%;
   overflow: auto;
+  padding: 10px;
 }
 
 form hr {
@@ -52,6 +53,7 @@ form hr {
 }
 
 #results {
+  color:rgb(255, 255, 255);
   text-align: center;
   padding: 15px;
   font-weight: bold;
