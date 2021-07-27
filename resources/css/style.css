@@ -1,6 +1,14 @@
+h1 {
+  font-family: 'Roboto', Helvetica, sans-serif;
+  font-weight: bold;
+}
 
 p {
-  font-family: helvetica
+  font-family: 'Roboto', Helvetica, sans-serif;
+}
+
+label {
+  font-family: 'Roboto', Helvetica, sans-serif;
 }
 
 header { 
@@ -53,16 +61,16 @@ form hr {
 }
 
 #results {
+  font-family: 'Roboto', Helvetica, sans-serif;
   color:rgb(255, 255, 255);
   text-align: center;
   padding: 15px;
   font-weight: bold;
 }
 
-
 #website-title {
   color: #474747;
-  font-family: cursive;
+  font-family: Sofia-pro;
   text-align: center;
   font-size: 2em;
 }
