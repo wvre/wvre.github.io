@@ -1,6 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
 h1 {
   font-family: 'Roboto', Helvetica, sans-serif;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 p {
@@ -8,12 +17,20 @@ p {
 }
 
 label {
+  font-size: 100%;
   font-family: 'Roboto', Helvetica, sans-serif;
 }
 
 header { 
-  width: 100%;
+  padding: 10px 0;
+  margin-bottom: 20px;
   top: 0; 
+}
+
+input[type="submit"] {
+  cursor: pointer;
+  height: auto;
+  width: auto;
 }
 
 footer {
@@ -42,6 +59,25 @@ form hr {
   width: 30%;
 }
 
+.button {
+  border-radius: 3px;
+  color: #FFFFFF;
+  background-color: #bbbbbb;
+  display: inline-block;
+  font-family: 'Roboto', Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+  padding: 3px 10px;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+}
+
+.button:hover {
+  background: #a5a5a5;
+}
+
 .navbar {
   background-color: white;
   width: 100%;
@@ -64,8 +100,9 @@ form hr {
   font-family: 'Roboto', Helvetica, sans-serif;
   color:rgb(255, 255, 255);
   text-align: center;
-  padding: 15px;
+  padding: 15px 0;
   font-weight: bold;
+  margin: 0px;
 }
 
 #website-title {
