@@ -2,22 +2,40 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Service Area Checker</title>
+    <title>Estimate Tool</title>
     <link rel="stylesheet" href="resources/css/style.css">
     <script defer src="resources/javascript/main.js"></script>
   </head>
   <body>
-    <form id="form">
-      <header>
-        <h1>Service Area Checker</h1>
-      </header>
-      <div>
-        <label for="zipCode">Zip Code:</label>
-        <input id="zipCode" type="text" name="zipCode" required>
-      </div>
-      <hr class="form-line">
+    <header>
+      <h1>Estimate Tool</h1>
+    </header>
+    <form id="form1">
+      <label for="zipCode">Zip Code:</label>
+      <input id="zipCode" type="text" name="zipCode" required>
+      <br>
       <input type="submit" value="Submit" class="button">
     </form>
-    <div id="results"></div>
+    <div id="zipResults"></div>
+    <hr class="dividingLine">
+    <form id="form2">
+      <label>Square Footage: </label>
+      <input id="sqft" type="text" name="sqft" required>
+      <br>
+      <input type="submit" value="Submit" class="button">
+    </form>
+    <div id="sqftArea">
+      <div id="givensqft"></div>
+      <div id="sqftContainer">
+        <div class="sqftResults" id="lightResults">
+          <div class="title" id="lightTitle"></div>
+          <div class="sqftBodies" id="lightBody"></div>
+        </div>
+        <div class="sqftResults" id="deepResults">
+          <div class="title" id="deepTitle"></div>
+          <div class="sqftBodies" id="deepBody"></div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
