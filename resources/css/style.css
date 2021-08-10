@@ -125,8 +125,12 @@ form hr {
   font-family: 'Roboto', Helvetica, sans-serif;
   color: #333;
   font-weight: bold;
+}
 
-  padding: 10px;
+.sqftRange {
+  font-family: 'Roboto', Helvetica, sans-serif;
+  color: #333;
+  margin-bottom: 10px;
 }
 
 .dividingLine {
