@@ -9,16 +9,20 @@ const lightBody = document.getElementById('lightBody');
 const deepBody = document.getElementById('deepBody');
 const lightResults = document.getElementById('lightResults');
 const deepResults = document.getElementById('deepResults');
+const moveResults = document.getElementById('moveResults');
 const lightTitle = document.getElementById('lightTitle');
 const deepTitle = document.getElementById('deepTitle');
+const moveTitle = document.getElementById('moveTitle');
 const lightSqftRange = document.getElementById('lightSqftRange');
 const deepSqftRange = document.getElementById('deepSqftRange');
+const moveSqftRange = document.getElementById('moveSqftRange');
 const sqftArea = document.getElementById('sqftArea');
 const sqftContainer = document.getElementById('sqftContainer');
 const sqftResults = document.getElementsByClassName('sqftResults')
 const LIGHT_RATE_SMALL = 80.00;
 const LIGHT_RATE_LARGE = 85.00;
 const DEEP_RATE = 98.00;
+const MOVE_RATE = 110.00;
 
 function removeSpaces(string) {
     return string.split(' ').join('');
@@ -48,71 +52,97 @@ sqftForm.addEventListener('submit', (e) => {
 
     lightResults.style.visibility = "visible";
     deepResults.style.visibility = "visible";
+    moveResults.style.visibility = "visible";
     givensqft.style.visibility = "visible";
 
     lightTitle.innerText = "Light Cleaning";
     deepTitle.innerText = "Deep Cleaning";
+    moveTitle.innerText = "Move Out Cleaning"
 
     if (sqftv <= 500) {
         lightSqftRange.innerText = "(0 - 2,200sqft)";
         deepSqftRange.innerText = "(0 - 500sqft)";
+        moveSqftRange.innerText = "(0 - 500sqft)";
         lightBody.innerText = "2 cleaners\n2 hours\n$" + 2 * LIGHT_RATE_SMALL;
         deepBody.innerText = "2 cleaners\n2 hours\n$" + 2 * DEEP_RATE;
+        moveBody.innerText = "2 cleaners\n2 hours\n$" + 2 * MOVE_RATE;
     } else if (sqftv <= 650) {
         lightSqftRange.innerText = "(0 - 2,200sqft)";
         deepSqftRange.innerText = "(500 - 650sqft)";
+        moveSqftRange.innerText = "(500 - 650sqft)";
         lightBody.innerText = "2 cleaners\n2 hours\n$" + 2 * LIGHT_RATE_SMALL;
         deepBody.innerText = "2 cleaners\n2 - 2.5 hours\n$" + 2 * DEEP_RATE + " - $" + 2.5 * DEEP_RATE;
+        moveBody.innerText = "2 cleaners\n2 - 2.5 hours\n$" + 2 * MOVE_RATE + " - $" + 2.5 * MOVE_RATE;
     } else if (sqftv <= 1300) {
         lightSqftRange.innerText = "(0 - 2,200sqft)";
         deepSqftRange.innerText = "(650 - 1,300sqft)";
+        moveSqftRange.innerText = "(650 - 1,300sqft)";
         lightBody.innerText = "2 cleaners\n2 hours\n$" + 2 * LIGHT_RATE_SMALL;
         deepBody.innerText = "2 cleaners\n2.5 - 3 hours\n$" + 2.5 * DEEP_RATE + " - $" + 3 * DEEP_RATE;
+        moveBody.innerText = "2 cleaners\n2.5 - 3 hours\n$" + 2.5 * MOVE_RATE + " - $" + 3 * MOVE_RATE;
     } else if (sqftv <= 2200) {
         lightSqftRange.innerText = "(0 - 2,200sqft)";
         deepSqftRange.innerText = "(1,300 - 2,450sqft)";
+        moveSqftRange.innerText = "(1,300 - 2,450sqft)";
         lightBody.innerText = "2 cleaners\n2 hours\n$" + 2 * LIGHT_RATE_LARGE;
         deepBody.innerText = "2 cleaners\n3 - 4 hours\n$" + 3 * DEEP_RATE + " - $" + 4 * DEEP_RATE;
+        moveBody.innerText = "2 cleaners\n3 - 4 hours\n$" + 3 * MOVE_RATE + " - $" + 4 * MOVE_RATE;
     } else if (sqftv <= 2450) {
         lightSqftRange.innerText = "(2,200 - 2,800sqft)";
         deepSqftRange.innerText = "(1,300 - 2,450sqft)";
+        moveSqftRange.innerText = "(1,300 - 2,450sqft)";
         lightBody.innerText = "2 cleaners\n2 - 2.5 hours\n$" + 2 * LIGHT_RATE_LARGE + " - $" + 2.5 * LIGHT_RATE_LARGE;
         deepBody.innerText = "2 cleaners\n3 - 4 hours\n$" + 3 * DEEP_RATE + " - $" + 4 * DEEP_RATE;
+        moveBody.innerText = "2 cleaners\n3 - 4 hours\n$" + 3 * MOVE_RATE + " - $" + 4 * MOVE_RATE;
     } else if (sqftv < 2800) {
         lightSqftRange.innerText = "(2,200 - 2,800sqft)";
         deepSqftRange.innerText = "(2,450 - 3,900sqft)";
+        moveSqftRange.innerText = "(2,450 - 3,900sqft)";
         lightBody.innerText = "2 cleaners\n2 - 2.5 hours\n$" + 2 * LIGHT_RATE_LARGE + " - $" + 2.5 * LIGHT_RATE_LARGE;
         deepBody.innerText = "2 cleaners\n3 - 5 hours\n$" + 3 * DEEP_RATE + " - $" + 5 * DEEP_RATE;
+        moveBody.innerText = "2 cleaners\n3 - 5 hours\n$" + 3 * MOVE_RATE + " - $" + 5 * MOVE_RATE;
     } else if (sqftv < 3900) {
         lightSqftRange.innerText = "(2,800 - 3,900sqft)";
         deepSqftRange.innerText = "(2,450 - 3,900sqft)";
+        moveSqftRange.innerText = "(2,450 - 3,900sqft)";
         lightBody.innerText = "2 cleaners\n2 - 3 hours\n$" + 2 * LIGHT_RATE_LARGE + " - $" + 3 * LIGHT_RATE_LARGE;
         deepBody.innerText = "2 cleaners\n3 - 5 hours\n$" + 3 * DEEP_RATE + " - $" + 5 * DEEP_RATE;
+        moveBody.innerText = "2 cleaners\n3 - 5 hours\n$" + 3 * MOVE_RATE + " - $" + 5 * MOVE_RATE;
     } else if (sqftv < 5000) {
         lightSqftRange.innerText = "(3,900 - 5,000sqft)";
         deepSqftRange.innerText = "(3,900 - 5,000sqft)";
+        moveSqftRange.innerText = "(3,900 - 5,000sqft)";
         lightBody.innerText = "2 cleaners\n3 - 4 hours\n$" + 3 * LIGHT_RATE_LARGE + " - $" + 4 * LIGHT_RATE_LARGE;
         deepBody.innerText = "2 cleaners\n4 - 6 hours\n$" + 4 * DEEP_RATE + " - $" + 6 * DEEP_RATE;
+        moveBody.innerText = "2 cleaners\n4 - 6 hours\n$" + 4 * MOVE_RATE + " - $" + 6 * MOVE_RATE;
     } else if (sqftv < 7000) {
         lightSqftRange.innerText = "(5,000 - 7,000sqft)";
         deepSqftRange.innerText = "(5,000 - 7,000sqft)";
+        moveSqftRange.innerText = "(5,000 - 7,000sqft)";
         lightBody.innerText = "2 cleaners\n4 - 5 hours\n$" + 4 * LIGHT_RATE_LARGE + " - $" + 5 * LIGHT_RATE_LARGE;
         deepBody.innerText = "2 cleaners\n5 - 7 hours\n$" + 5 * DEEP_RATE + " - $" + 7 * DEEP_RATE;
+        moveBody.innerText = "2 cleaners\n5 - 7 hours\n$" + 5 * MOVE_RATE + " - $" + 7 * MOVE_RATE;
     } else if (sqftv < 12000) {
         lightSqftRange.innerText = "(7,000 - 12,000sqft)";
         deepSqftRange.innerText = "(7,000 - 12,000sqft)";
+        moveSqftRange.innerText = "(7,000 - 12,000sqft)";
         lightBody.innerText = "2 cleaners\n5 - 6 hours\n$" + 5 * LIGHT_RATE_LARGE + " - $" + 6 * LIGHT_RATE_LARGE;
         deepBody.innerText = "4 cleaners\n4 - 6 hours\n$" + 4 * DEEP_RATE * 2 + " - $" + 6 * DEEP_RATE * 2;
+        moveBody.innerText = "4 cleaners\n4 - 6 hours\n$" + 4 * MOVE_RATE * 2 + " - $" + 6 * MOVE_RATE * 2;
     } else if (sqftv <= 20000) {
         lightSqftRange.innerText = "(12,000 - 20,000sqft)";
         deepSqftRange.innerText = "(12,000 - 20,000sqft)";
+        moveSqftRange.innerText = "(12,000 - 20,000sqft)";
         lightBody.innerText = "2 cleaners\n6 - 7 hours\n$" + 6 * LIGHT_RATE_LARGE + " - $" + 7 * LIGHT_RATE_LARGE;
         deepBody.innerText = "4 cleaners\n6 - 9 hours\n$" + 6 * DEEP_RATE * 2 + " - $" + 9 * DEEP_RATE * 2;
+        moveBody.innerText = "4 cleaners\n6 - 9 hours\n$" + 6 * MOVE_RATE * 2 + " - $" + 9 * MOVE_RATE * 2;
     } else {
         lightSqftRange.innerText = "";
         deepSqftRange.innerText = "";
+        moveSqftRange.innerText = "";
         lightBody.innerText = "Square footage not found";
         deepBody.innerText = "Square footage not found";
+        moveBody.innerText = "Square footage not found";
     }
 
     sqftForm.reset();
