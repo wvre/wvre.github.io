@@ -19,6 +19,11 @@ const moveSqftRange = document.getElementById('moveSqftRange');
 const sqftArea = document.getElementById('sqftArea');
 const sqftContainer = document.getElementById('sqftContainer');
 const sqftResults = document.getElementsByClassName('sqftResults')
+const addOnResults = document.getElementById('addOnResults');
+const addOnTitle = document.getElementById('addOnTitle');
+const addOnWalls = document.getElementById('addOnWalls');
+const addOnGarage = document.getElementById('addOnGarage');
+const addOnPatio = document.getElementById('addOnPatio');
 const LIGHT_RATE_SMALL = 80.00;
 const LIGHT_RATE_LARGE = 85.00;
 const DEEP_RATE = 98.00;
@@ -54,6 +59,7 @@ sqftForm.addEventListener('submit', (e) => {
     deepResults.style.visibility = "visible";
     moveResults.style.visibility = "visible";
     givensqft.style.visibility = "visible";
+    addOnResults.style.visibility = "visible";
 
     lightTitle.innerText = "Light Cleaning";
     deepTitle.innerText = "Deep Cleaning";
@@ -144,6 +150,12 @@ sqftForm.addEventListener('submit', (e) => {
         deepBody.innerText = "Square footage not found";
         moveBody.innerText = "Square footage not found";
     }
+
+    addOnWalls.innerText = "Walls: $60";
+    addOnGarage.innerText = "Garage: $35";
+    addOnPatio.innerText = "Patio: $25";
+    addOnTitle.innerText = "Add Ons";
+
 
     sqftForm.reset();
 })

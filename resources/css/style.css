@@ -112,6 +112,12 @@ form hr {
   font-family: 'Roboto', Helvetica, sans-serif;
 }
 
+.addOns {
+  font-size: 100%;
+  color: #333;
+  font-family: 'Roboto', Helvetica, sans-serif;
+}
+
 .sqftResults { 
   background-color: #f5f5f5;
   padding: 20px;
@@ -178,6 +184,12 @@ form hr {
 }
 
 #moveResults {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#addOnResults {
+  margin-left: 20px;
   margin-top: 20px;
   text-align: center;
 }
