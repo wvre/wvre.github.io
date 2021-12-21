@@ -128,9 +128,17 @@ form hr {
 }
 
 .title {
+  text-align: center;
   font-family: 'Roboto', Helvetica, sans-serif;
   color: #333;
   font-weight: bold;
+}
+
+.frequency {
+  text-align: center;
+  font-size: 100%;
+  color: #333;
+  font-family: 'Roboto', Helvetica, sans-serif;
 }
 
 .sqftRange {
@@ -141,6 +149,13 @@ form hr {
 
 .dividingLine {
   margin: 30px 10%;
+}
+
+.recurrings {
+  text-align: center;
+  font-size: 100%;
+  color: #333;
+  font-family: 'Roboto', Helvetica, sans-serif;
 }
 
 #zipResults {
@@ -192,6 +207,15 @@ form hr {
   margin-left: 20px;
   margin-top: 20px;
   text-align: center;
+}
+
+#recurringBodies {
+  display: flex;
+  justify-content: space-between;
+}
+
+#recurringResults {
+  margin-top: 20px;
 }
 
 #sqftContainer {
