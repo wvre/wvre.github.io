@@ -1,4 +1,5 @@
 const zips = ['80216', '80211', '80212', '80214', '80204', '80219', '80207', '80205', '80202', '80203', '80218', '80206', '80220', '80223', '80209', '80246', '80210', '80222', '80224', '80110', '80112', '80113', '80237', '80231', '80238', '80247'];
+const maybeZips = ['80230', '80045', '80012', '80014', '80111'];
 const zip = document.getElementById('zipCode');
 const sqft = document.getElementById('sqft');
 const zipForm = document.getElementById('form1');
@@ -48,7 +49,11 @@ zipForm.addEventListener('submit', (e) => {
     if (zips.indexOf(zipv) > -1) {
         zipResults.style.backgroundColor = '#54db51';
 
-    } else {
+    } else if (maybeZips.indexOf(zipv) > -1) {
+        zipResults.style.backgroundColor = '#FFC300';
+    }
+    
+    else {
         zipResults.style.backgroundColor = '#f3605e';
     }
 
