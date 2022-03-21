@@ -32,9 +32,9 @@ const weeklyBody = document.getElementById('weeklyBody');
 const biweeklyBody = document.getElementById('biweeklyBody');
 const threeWeekBody = document.getElementById('threeWeekBody');
 const fourWeekBody = document.getElementById('fourWeekBody');
-const LIGHT_RATE_SMALL = 80.00;
-const LIGHT_RATE_LARGE = 85.00;
-const DEEP_RATE = 98.00;
+const LIGHT_RATE_SMALL = 85.00;
+const LIGHT_RATE_LARGE = 90.00;
+const DEEP_RATE = 105.00;
 const MOVE_RATE = 110.00;
 
 function removeSpaces(string) {
