@@ -35,7 +35,7 @@ const fourWeekBody = document.getElementById('fourWeekBody');
 const LIGHT_RATE_SMALL = 90.00;
 const LIGHT_RATE_LARGE = 90.00;
 const DEEP_RATE = 105.00;
-const MOVE_RATE = 110.00;
+const MOVE_RATE = 125.00;
 
 function removeSpaces(string) {
     return string.split(' ').join('');
