@@ -7,6 +7,10 @@ body {
   margin: 0px;
 }
 
+button {
+  padding: 5px 10px;
+}
+
 h1 {
   font-family: 'Roboto', Helvetica, sans-serif;
   color: #333;
@@ -147,6 +151,44 @@ form hr {
   margin-bottom: 10px;
 }
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
 .dividingLine {
   margin: 30px 10%;
 }
@@ -162,10 +204,18 @@ form hr {
   font-family: 'Roboto', Helvetica, sans-serif;
   color:rgb(255, 255, 255);
   text-align: center;
-  padding: 15px 0;
   font-weight: bold;
-  margin: 0 10%;
+}
+
+#zipResultsContainer {
   border-radius: 5px;
+  margin: 0 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  column-gap: 15px;
+  padding: 15px 0;
 }
 
 #givensqft { 

@@ -4,6 +4,8 @@ const zip = document.getElementById('zipCode');
 const sqft = document.getElementById('sqft');
 const zipForm = document.getElementById('form1');
 const zipResults = document.getElementById('zipResults');
+const zipResultsContainer = document.getElementById('zipResultsContainer');
+const zipCopyButton = document.getElementById('zipCopyButton');
 const givensqft = document.getElementById('givensqft');
 const sqftForm = document.getElementById('form2');
 const lightBody = document.getElementById('lightBody');
@@ -41,23 +43,42 @@ function removeSpaces(string) {
     return string.split(' ').join('');
 }
 
+function copyZipTemplate() {
+    var template = "Hello,\n\nThank you for your interest in Denver Cleaning Service Company! Unfortunately, you are outside of our service area. I apologize for the inconvenience. Best of luck and have a great day!";
+
+    navigator.clipboard.writeText(template);
+
+    var tooltip = document.getElementById("myTooltip");
+    tooltip.innerHTML = "Copied";
+}
+
+function outFunc() {
+    var tooltip = document.getElementById("myTooltip");
+    tooltip.innerHTML = "Copy to clipboard";
+}
+
 zipForm.addEventListener('submit', (e) => {    
     e.preventDefault();
     let zipv = removeSpaces(zip.value);
-    zipResults.innerText = zipv;
+    zipResults.innerHTML = zipv;
+    zipCopyButton.innerHTML = "";
 
     if (zips.indexOf(zipv) > -1) {
-        zipResults.style.backgroundColor = '#54db51';
-
+        zipResultsContainer.style.backgroundColor = '#54db51';
     } else if (maybeZips.indexOf(zipv) > -1) {
-        zipResults.style.backgroundColor = '#FFC300';
-    }
-    
-    else {
-        zipResults.style.backgroundColor = '#f3605e';
+        zipResultsContainer.style.backgroundColor = '#FFC300';
+    } else {
+        zipResultsContainer.style.backgroundColor = '#f3605e';
+        var button = document.createElement('button');
+        button.type = 'button';
+        button.innerHTML = '<span class="tooltiptext" id="myTooltip">Copy to clipboard</span>Email';
+        button.onclick = copyZipTemplate;
+        button.onmouseout = outFunc;
+        
+        zipCopyButton.appendChild(button);
     }
 
-    zipResults.style.boxShadow = "0 5px 5px rgb(221, 221, 221)";
+    zipResultsContainer.style.boxShadow = "0 5px 5px rgb(221, 221, 221)";
 
     zipForm.reset();
 })
