@@ -1,5 +1,6 @@
 const zips = ['80216', '80211', '80212', '80214', '80204', '80219', '80207', '80208', '80205', '80202', '80203', '80218', '80206', '80220', '80223', '80209', '80246', '80210', '80222', '80224', '80110', '80113', '80237', '80231', '80238', '80247'];
-const maybeZips = ['80230', '80045', '80012', '80014', '80111'];
+const maybeZips = ['80045', '80012', '80014', '80111', '80010', '80121', '80120', '80236', '80226', '80215', '80033'];
+const desperateZips = ['80112', '80122', '80123', '80227', '80232'];
 const zip = document.getElementById('zipCode');
 const sqft = document.getElementById('sqft');
 const zipForm = document.getElementById('form1');
@@ -66,9 +67,11 @@ zipForm.addEventListener('submit', (e) => {
     if (zips.indexOf(zipv) > -1) {
         zipResultsContainer.style.backgroundColor = '#54db51';
     } else if (maybeZips.indexOf(zipv) > -1) {
-        zipResultsContainer.style.backgroundColor = '#FFC300';
+        zipResultsContainer.style.backgroundColor = '#FFDD00';
+    } else if (desperateZips.indexOf(zipv) > -1) {
+        zipResultsContainer.style.backgroundColor = '#F99F2F';
     } else {
-        zipResultsContainer.style.backgroundColor = '#f3605e';
+        zipResultsContainer.style.backgroundColor = '#F2615E';
         var button = document.createElement('button');
         button.type = 'button';
         button.innerHTML = '<span class="tooltiptext" id="myTooltip">Copy to clipboard</span>Email';
